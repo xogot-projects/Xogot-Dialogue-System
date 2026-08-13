@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dn5gawwfvn78l"]
+
+[ext_resource type="Script" uid="uid://bdbc3awrhu2at" path="res://Player/player.gd" id="1_4ntmi"]
+[ext_resource type="Texture2D" uid="uid://ci5ab6cittj31" path="res://Art/Bobby.png" id="2_4ntmi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l8h54"]
+size = Vector2(16, 16)
+
+[node name="Player" type="CharacterBody2D" unique_id=1160977876 groups=["Player"]]
+collision_layer = 2
+script = ExtResource("1_4ntmi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1830386248]
+texture = ExtResource("2_4ntmi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=52261001]
+shape = SubResource("RectangleShape2D_l8h54")
+debug_color = Color(0, 0.6, 0.69803923, 0)
+
+[node name="Detectors" type="Node2D" parent="." unique_id=2082168723]
+
+[node name="Down" type="RayCast2D" parent="Detectors" unique_id=1569912824]
+target_position = Vector2(0, 9)
+
+[node name="Left" type="RayCast2D" parent="Detectors" unique_id=76861991]
+target_position = Vector2(-9, 0)
+
+[node name="Up" type="RayCast2D" parent="Detectors" unique_id=2123524149]
+target_position = Vector2(0, -9)
+
+[node name="Right" type="RayCast2D" parent="Detectors" unique_id=854878547]
+target_position = Vector2(9, 0)

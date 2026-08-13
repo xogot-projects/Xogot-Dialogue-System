@@ -1,0 +1,78 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="DialogueSystem"
+run/main_scene="uid://bhnfd22clkcxs"
+config/features=PackedStringArray("4.6", "Forward Plus")
+boot_splash/bg_color=Color(0.06469657, 0.06469652, 0.0646965, 1)
+config/icon="res://icon.svg"
+
+[autoload]
+
+InteractionManager="*res://InteractionAndDialogue/Interaction/InteractionManager.tscn"
+DialogueManager="*res://InteractionAndDialogue/Dialogue/DialogueManager.gd"
+
+[display]
+
+window/size/viewport_width=320
+window/size/viewport_height=180
+window/stretch/mode="canvas_items"
+
+[global_group]
+
+Player=""
+
+[input]
+
+Interact={
+"deadzone": 0.5,
+"events": Array[InputEvent]([Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
+])
+}
+
+[input_devices]
+
+virtual_controller/ios/enable_controller=true
+
+[layer_names]
+
+2d_render/canvas_textures/default_texture_filter=0
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="forward_plus"
+viewport/hdr_2d=true
+environment/defaults/default_clear_color=Color(0.0627451, 0.0627451, 0.0627451, 1)
+2d/snap/snap_2d_transforms_to_pixel=true
+
+[xogot]
+
+project/editorState=[{
+"column": 0,
+"line": 0,
+"path": "res://Player/player.gd",
+"type": "file"
+}, {
+"column": 0,
+"current": true,
+"line": 0,
+"path": "res://NPC/npc.gd",
+"type": "file"
+}]
+project/breakpoints={}
+project/disabled_breakpoints={}
